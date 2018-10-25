@@ -1,15 +1,20 @@
 <html ng-app='lunchApp'>
-    <head>
-        <meta charset="utf-8">
-        <script src="angular.min.js"></script>
-        <script src="lunchApp.js"></script>
-        <title>Hello Coursera</title>
-    </head>
-    <body ng-controller='lunchItemController'>
-            <h3>Please list comma-separated items you eat for lunch</h3> 
-            <input type="text" name="lunch" ng-model="lunchItems">
-            <br><br>
-            <input type="submit" value="Check If Too Much" name="checkLunch" ng-click="getNumberOfItems()">
-            <P style="color:{{color}}">{{message}}</P>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="lunchApp.js"></script>
+    <title>Hello Coursera</title>
+</head>
+
+<body>
+    <div ng-controller='LunchCheckController'>
+        <h3>Please list comma-separated items you eat for lunch</h3>
+        <input type="text" name="lunch" ng-model="lunchItems">
+        <br><br>
+        <input type="submit" value="Check If Too Much" name="checkLunch" ng-click="getNumberOfItems()">
+        <P style="color:{{color}}">{{message}}</P>
+    </div>
+</body>
+
 </html>

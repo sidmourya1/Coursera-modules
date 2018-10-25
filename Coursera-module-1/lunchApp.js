@@ -3,11 +3,11 @@
     'use strict';
 
     angular.module('lunchApp', [])
-        .controller('lunchItemController', lunchItemController);
+        .controller('LunchCheckController', LunchCheckController);
 
-    lunchItemController.inject = ['$scope'];
+    LunchCheckController.inject = ['$scope'];
 
-    function lunchItemController($scope) {
+    function LunchCheckController($scope) {
 
         $scope.lunchItems;
         $scope.message;
@@ -17,7 +17,7 @@
             if (!($scope.lunchItems === undefined) && !($scope.lunchItems === "")) {
                 var lunchArray = $scope.lunchItems.split(",");
 
-                if ( lunchArray.length <= 3 ) {
+                if (lunchArray.length <= 3) {
                     $scope.message = "Enjoy!";
                     $scope.color = "green";
                 }
