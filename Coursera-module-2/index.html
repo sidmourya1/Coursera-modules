@@ -11,20 +11,30 @@
     <div ng-controller="ToBuyController as toBuy">
         <h3>To Buy</h3>
         <p ng-if="toBuy.itemsToBuy.length == 0">Everything is bought!</p>
-        <ul>
-            <li ng-repeat="item in toBuy.itemsToBuy track by $index">Buy {{item.quantity}} {{item.name}}
-                <button ng-click="toBuy.BuyThisItem($index)">Bought</button>
-            </li>
-        </ul>
+        <table>
+            <tr ng-repeat="item in toBuy.itemsToBuy track by $index">
+                <td>
+                    Buy {{item.quantity}} {{item.name}}
+                </td>
+                <td>
+                    <button ng-click="toBuy.BuyThisItem($index)">Bought</button>
+                </td>
+            </tr>
+        </table>
     </div>
     <div ng-controller="AlreadyBoughtController as alreadyBought">
         <h3>Already Bought</h3>
         <p ng-if="alreadyBought.itemsBought.length == 0">Nothing bought yet!</p>
-        <ul>
-            <li ng-repeat="item in alreadyBought.itemsBought">
-                Bought {{item.quantity}} {{item.name}}
-            </li>
-        </ul>
+        <table>
+            <tr ng-repeat="item in alreadyBought.itemsBought">
+                <td>
+                    <img style="width:20px;height:20px;" src="images/images.png">
+                </td>
+                <td>
+                    Bought {{item.quantity}} {{item.name}}
+                </td>
+            </tr>
+        </table>
     </div>
 </body>
 
