@@ -66,9 +66,9 @@
     MenuSearchService.$inject = ['$http', 'API_URL'];
     function MenuSearchService($http, API_URL){
       let service = this;
-      let items = [];
   
       service.getMatchedMenuItems = function(searchTerm){
+        let items = [];
         return $http({method: "GET", url: (API_URL + 'menu_items.json') })
         .then(function success(response){
           let menuItems = response.data.menu_items;
