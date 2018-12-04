@@ -19,14 +19,13 @@
         };
 
         service.getItemsForCategory = function (categoryShortName) {
-            console.log("Category short name : " + categoryShortName);
-            return $http({ method: "GET", url: (API_URL + 'menu_items.json?category='+categoryShortName) })
-            .then(function success(response) {
-                let items = response.data.menu_items;
-                return items;
-            }).catch(function (error) {
-                console.log("Something went wrong while getting items. " + error.message);
-            });
+            return $http({ method: "GET", url: (API_URL + 'menu_items.json?category=' + categoryShortName) })
+                .then(function success(response) {
+                    let items = response.data.menu_items;
+                    return items;
+                }).catch(function (error) {
+                    console.log("Something went wrong while getting items. " + error.message);
+                });
         };
     }
 })();
