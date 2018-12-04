@@ -32,12 +32,17 @@
             })
 
             // Item detail
-            .state('mainList.itemDetail', {
-                // url: '/item-detail/{itemId}',
+            .state('itemDetail', {
+                url: '/item-detail/{itemId}',
                 templateUrl: 'src/RestaurantMenu/templates/item-detail.template.html',
                 controller: 'ItemDetailController as itemDetail',
-                params: {
-                    itemId: null
+                resolve: {
+                    items: ['$stateParams','MenuDataService', function ($stateParams, MenuDataService) {
+                        return MenuDataService.getAllCategories()
+                        .then(function (categories){
+                            return MenuDataService.getItemsForCategory(categories[$stateParams.itemId].short_name);
+                        });
+                    }]
                 }
             });
     }

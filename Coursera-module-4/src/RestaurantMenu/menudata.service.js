@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('MenuApp')
+    angular.module('data')
         .service('MenuDataService', MenuDataService)
         .constant('API_URL', 'https://davids-restaurant.herokuapp.com/');
 
@@ -19,9 +19,11 @@
         };
 
         service.getItemsForCategory = function (categoryShortName) {
+            console.log("Category short name : " + categoryShortName);
             return $http({ method: "GET", url: (API_URL + 'menu_items.json?category='+categoryShortName) })
             .then(function success(response) {
-                return response.data;
+                let items = response.data.menu_items;
+                return items;
             }).catch(function (error) {
                 console.log("Something went wrong while getting items. " + error.message);
             });

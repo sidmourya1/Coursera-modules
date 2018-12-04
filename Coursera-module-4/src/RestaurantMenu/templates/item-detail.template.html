@@ -1,3 +1,6 @@
-<div>Item name: {{ itemDetail.name }}</div>
-<div>Item quantity: {{ itemDetail.quantity }}</div>
-<div>Item description: {{ itemDetail.description }}</div>
+<a ui-sref="categoryList">Menu Categories</a>
+
+<h3>Below is the list of items in this category</h3>
+<item-list categories="mainList.items"></item-list>
+
+<ui-view></ui-view>
