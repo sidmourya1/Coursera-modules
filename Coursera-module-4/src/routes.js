@@ -22,11 +22,11 @@
             // Premade list page
             .state('categoryList', {
                 url: '/category-list',
-                templateUrl: 'src/RestaurantMenu/templates/main-shoppinglist.template.html',
-                controller: 'MainShoppingListController as mainList',
+                templateUrl: 'src/RestaurantMenu/templates/menuApp.template.html',
+                controller: 'MainMenuAppController as mainList',
                 resolve: {
-                    categories: ['ShoppingListService', function (ShoppingListService) {
-                        return ShoppingListService.getItems();
+                    categories: ['MenuDataService', function (MenuDataService) {
+                        return MenuDataService.getAllCategories();
                     }]
                 }
             })
