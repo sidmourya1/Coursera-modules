@@ -4,7 +4,7 @@
             <div style="font-weight: bold">{{ category.name }} </div>
             <div ng-if="category.special_instructions != ''">Special Instructions : {{category.special_instructions}}</div>
             <div ng-if="category.special_instructions === ''">Special Instructions : None</div>
-            <br><button class="btn" ui-sref="itemList({itemId:$index})">Menu Items</button>
+            <br><button class="btn" ui-sref="items({itemId:$index})">Menu Items</button>
           </li>
         </ol>
 </div>

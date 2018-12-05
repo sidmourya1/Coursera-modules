@@ -20,7 +20,7 @@
             })
 
             // Menu Categories
-            .state('categoryList', {
+            .state('categories', {
                 url: '/category-list',
                 templateUrl: 'src/RestaurantMenu/templates/category.template.html',
                 controller: 'CategoryController as categoryCtrl',
@@ -32,7 +32,7 @@
             })
 
             // Menu Items
-            .state('itemList', {
+            .state('items', {
                 url: '/item-list/{itemId}',
                 templateUrl: 'src/RestaurantMenu/templates/item.template.html',
                 controller: 'ItemController as itemCtrl',
