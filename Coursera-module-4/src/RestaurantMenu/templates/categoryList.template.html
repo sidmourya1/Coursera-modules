@@ -1,10 +1,10 @@
 <div class="list-group">
         <ol>
           <li class="list-group-item" ng-repeat="category in $ctrl.categories">
-            <span style="font-size: bold">  {{ category.name }}  </span> 
+            <div style="font-weight: bold">{{ category.name }} </div>
             <div ng-if="category.special_instructions != ''">Special Instructions : {{category.special_instructions}}</div>
             <div ng-if="category.special_instructions === ''">Special Instructions : None</div>
-            <br><button class="btn" ui-sref="itemDetail({itemId:$index})">Menu Items</button>
+            <br><button class="btn" ui-sref="itemList({itemId:$index})">Menu Items</button>
           </li>
         </ol>
 </div>

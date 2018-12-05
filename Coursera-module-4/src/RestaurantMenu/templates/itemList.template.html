@@ -1,0 +1,21 @@
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Item Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price Small</th>
+            <th scope="col">Price Large</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in $ctrl.items">
+            <td>{{ item.name }}</td>
+            <td ng-if="item.description != ''">{{item.description}}</td>
+            <td ng-if="item.description === ''"> - </td>
+            <td ng-if="item.price_small != null">{{item.price_small}}</td>
+            <td ng-if="item.price_small === null"> - </td>
+            <td ng-if="item.price_large != null">{{item.price_large}}</td>
+            <td ng-if="item.price_large === null"> - </td>
+        </tr>
+    </tbody>
+</table>

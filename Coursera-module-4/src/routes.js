@@ -19,11 +19,11 @@
                 templateUrl: 'src/RestaurantMenu/templates/home.template.html'
             })
 
-            // Premade list page
+            // Menu Categories
             .state('categoryList', {
                 url: '/category-list',
-                templateUrl: 'src/RestaurantMenu/templates/menuApp.template.html',
-                controller: 'MainMenuAppController as mainList',
+                templateUrl: 'src/RestaurantMenu/templates/category.template.html',
+                controller: 'CategoryController as categoryCtrl',
                 resolve: {
                     categories: ['MenuDataService', function (MenuDataService) {
                         return MenuDataService.getAllCategories();
@@ -31,11 +31,11 @@
                 }
             })
 
-            // Item detail
-            .state('itemDetail', {
-                url: '/item-detail/{itemId}',
-                templateUrl: 'src/RestaurantMenu/templates/item-detail.template.html',
-                controller: 'ItemDetailController as itemDetail',
+            // Menu Items
+            .state('itemList', {
+                url: '/item-list/{itemId}',
+                templateUrl: 'src/RestaurantMenu/templates/item.template.html',
+                controller: 'ItemController as itemCtrl',
                 resolve: {
                     items: ['$stateParams','MenuDataService', function ($stateParams, MenuDataService) {
                         return MenuDataService.getAllCategories()
